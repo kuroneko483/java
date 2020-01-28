@@ -18,7 +18,7 @@ public class coffeeshop extends javax.swing.JFrame {
         initComponents();
     }
     private String name;
-    private String coffe;
+    private String coffee;
     private String addon;
     private int quantity;
     private Double price;
@@ -106,7 +106,7 @@ public class coffeeshop extends javax.swing.JFrame {
         jTextField6.setEditable(false);
         jTextField6.setText("Add-on:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Add-on", " " }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Add-on", "Butter", "Marshmallows", "Chocolate balls", "Rice Crispy", "Cream", "Milk", "Tea", "Pearls", "Gulaman", "Nata de Coco", "Corn Chips", "Oat meals", " " }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -130,6 +130,7 @@ public class coffeeshop extends javax.swing.JFrame {
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField10.setText("Subtotal");
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -186,24 +187,21 @@ public class coffeeshop extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField15)
                             .addComponent(jTextField16)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane1)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,8 +256,92 @@ public class coffeeshop extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private 
-           
+    private String getname()
+    {
+        return this.name;
+    }
+    private void name(String paraname)
+    {
+        this.name = paraname;
+    }
+    private String coffee()
+    {
+        return this.coffee;
+    }
+    private void setcoffee(String paracoffee)
+    {
+        this.coffee = paracoffee;
+    }
+    private String addon()
+    {
+        return this.addon;
+    }
+    private void setaddon(String paramadd)
+    {
+        this.addon = paramadd;
+    }
+    private int quantity()
+    {
+        return this.quantity;
+    }
+    private void setquantity(int paratity)
+    {
+        this.quantity = paratity;
+    }
+    private Double price()
+    {
+        
+       
+        return this.price;
+        
+        Cold Brew
+                Percolated
+                        Turkish Coffee
+                                Moka
+                                    Espresso
+    }
+    private void setprice()
+    { if(this.coffee.equals("Drop or Filtered"))
+        {
+            this.price = 120d;
+        }
+        else if(this.coffee.equals("French press"))
+        {
+            this.price = 140d;
+        }
+        else if(this.coffee.equals("Cold Brew"))
+        {
+            this.price = 130d;
+        }
+        else if(this.coffee.equals("Percolated"))
+        {
+            this.price = 150d;
+        }
+        else if(this.coffee.equals("Turkish Coffee"))
+        {
+            this.price = 200d;
+        }
+        else if(this.coffee.equals("Moka"))
+        {
+            this.price = 160d;
+        }
+        else if(this.coffee.equals("Espresso"))
+        {
+            this.price = 100d;
+        }
+        else
+        {
+            this.price = 0d;
+        }
+    }
+    private String current()
+    {
+        return this.current;
+    }
+    private void setcurrent(String paracurr)
+    {
+        this.current = paracurr;
+    }
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -281,7 +363,7 @@ public class coffeeshop extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-          int ok = 20;
+        setprice(price());
           
     }//GEN-LAST:event_jButton1ActionPerformed
 
