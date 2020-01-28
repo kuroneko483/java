@@ -20,6 +20,7 @@ public class coffeeshop extends javax.swing.JFrame {
     private String name;
     private String coffee;
     private String addon;
+    private Double addonprice;
     private int quantity;
     private Double price;
     private String current;
@@ -258,74 +259,118 @@ public class coffeeshop extends javax.swing.JFrame {
 
     private String getname()
     {
+        this.name = jTextField3.getText();
         return this.name;
     }
-    private void name(String paraname)
-    {
-        this.name = paraname;
-    }
     private String coffee()
-    {
+    {   
+        this.coffee = jComboBox1.getSelectedItem().toString();
+        if (this.coffee.equals("Choose Coffee"))
+        {
+            this.coffee = "none";
+        }
         return this.coffee;
-    }
-    private void setcoffee(String paracoffee)
-    {
-        this.coffee = paracoffee;
     }
     private String addon()
     {
+        this.addon = jComboBox2.getSelectedItem().toString();
+        if(this.addon.equals("Butter"))
+        {
+            this.addonprice = 5d;
+        }
+        else if(this.addon.equals("Marshmallows"))
+        {
+            this.addonprice = 3d;
+        }
+        else if(this.addon.equals("Chocolate balls"))
+        {
+            this.addonprice = 20d;
+        }
+        else if(this.addon.equals("Rice Crispy"))
+        {
+            this.addonprice = 15d;
+        }
+        else if(this.addon.equals("Cream"))
+        {
+            this.addonprice = 5d;
+        }
+        else if(this.addon.equals("Milk"))
+        {
+            this.addonprice = 13d;
+        }
+        else if(this.addon.equals("Tea"))
+        {
+            this.addonprice = 100d;
+        }
+        else if(this.addon.equals("Pearls"))
+        {
+            this.addonprice = 10d;
+        }
+        else if(this.addon.equals("Gulaman"))
+        {
+            this.addonprice = 10d;
+        }
+        else if(this.addon.equals("Nata de Coco"))
+        {
+            this.addonprice = 25d;
+        }
+        else if(this.addon.equals("Corn Chips"))
+        {
+            this.addonprice = 5d;
+        }
+        else if(this.addon.equals("Oat meals"))
+        {
+            this.addonprice = 15d;
+        }
+        else
+        {
+            this.addonprice = 0d;
+        }
+        addonprice(this.addonprice);
+        if(this.addon.equals("Select Add-on"))
+        {
+            this.addon = "none";
+        }
         return this.addon;
     }
-    private void setaddon(String paramadd)
+    private void addonprice(Double add)
     {
-        this.addon = paramadd;
+        this.addonprice = add;
     }
+    
     private int quantity()
     {
+        this.quantity = Integer.parseInt(jTextField5.getText());
         return this.quantity;
     }
-    private void setquantity(int paratity)
-    {
-        this.quantity = paratity;
-    }
+  
     private Double price()
     {
-        
-       
-        return this.price;
-        
-        Cold Brew
-                Percolated
-                        Turkish Coffee
-                                Moka
-                                    Espresso
-    }
-    private void setprice()
-    { if(this.coffee.equals("Drop or Filtered"))
+     if(coffee().equals("Drip or Filtered"))
         {
             this.price = 120d;
         }
-        else if(this.coffee.equals("French press"))
+        else if(coffee().equals("French press"))
         {
             this.price = 140d;
         }
-        else if(this.coffee.equals("Cold Brew"))
+        else if(coffee().equals("Cold Brew"))
         {
             this.price = 130d;
         }
-        else if(this.coffee.equals("Percolated"))
+        else if(coffee().equals("Percolated"))
         {
             this.price = 150d;
         }
-        else if(this.coffee.equals("Turkish Coffee"))
+        else if(coffee().equals("Turkish Coffee"))
         {
             this.price = 200d;
         }
-        else if(this.coffee.equals("Moka"))
+        else if(coffee().equals("Moka"))
         {
             this.price = 160d;
         }
-        else if(this.coffee.equals("Espresso"))
+        else if(coffee().equals("Espresso"))
         {
             this.price = 100d;
         }
@@ -333,6 +378,8 @@ public class coffeeshop extends javax.swing.JFrame {
         {
             this.price = 0d;
         }
+        return this.price;
+        
     }
     private String current()
     {
@@ -363,8 +410,9 @@ public class coffeeshop extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        setprice(price());
-          
+        jTextArea1.setText(this.addonprice.toString());
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
